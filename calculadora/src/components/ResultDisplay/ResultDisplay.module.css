@@ -1,0 +1,12 @@
+.container{
+    display: flexbox;    
+    background-color: #0056b3;
+    color: black;
+    text-align: center;  
+    padding: 1rem 0;
+    line-height: 2rem;
+    
+  }
+  
+
+

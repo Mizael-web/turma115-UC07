@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Button from "../../components/Button/Button";
 import InputField from "../../components/InputField/InputField";
 import ResultDisplay from "../../components/ResultDisplay/ResultDisplay";
+import style from "./TipCalculator.module.css";
+
 function TipCalculator() {
     const [valorConta, setValorConta] = useState("");
     const [percentualGorjeta, setPercentualGorjeta] = useState("");
@@ -13,8 +15,10 @@ function TipCalculator() {
         const total = valor + valorGorjeta;
         setResultado({ gorjeta: valorGorjeta, total: total });
     }
+
     return (
         <>
+            <div className={style.TipCalculatorPage}>
             <h1>Calculadora de Gorjeta</h1>
             <InputField
                 label="Valor da Conta:"
@@ -29,8 +33,10 @@ function TipCalculator() {
             <Button
                 text="Calcular" onCLick={calcularGorjeta}
             />
-            <ResultDisplay gorjeta={resultado.gorjeta} total={resultado.total} />
+            <ResultDisplay gorjeta={resultado.gorjeta} total={resultado.total}/>
+            </div>
         </>
+        
     )
 }
 export default TipCalculator;
